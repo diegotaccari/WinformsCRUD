@@ -29,7 +29,7 @@ namespace WinformsCRUD
         {
             SaveContact();
             this.Close();
-           ((Main) this.Owner).PopulateContas();
+           ((MainContacts) this.Owner).PopulateContas();
         }
 
         private void SaveContact()

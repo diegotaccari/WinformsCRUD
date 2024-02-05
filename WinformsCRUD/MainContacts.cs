@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WinformsCRUD
 {
-    public partial class Main : Form
+    public partial class MainContacts : Form
     {
         private BusinessLogicLayer _businessLogicLayer;
-        public Main()
+        public MainContacts()
         {
             InitializeComponent();
             _businessLogicLayer = new BusinessLogicLayer();
@@ -76,6 +76,11 @@ namespace WinformsCRUD
         {
             PopulateContas(txtSearch.Text);
             txtSearch.Text = string.Empty;
+        }
+
+        private void btnBackMain_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

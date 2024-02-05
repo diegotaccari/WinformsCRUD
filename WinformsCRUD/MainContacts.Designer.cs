@@ -1,6 +1,6 @@
 ﻿namespace WinformsCRUD
 {
-    partial class Main
+    partial class MainContacts
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GridContacts = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBackMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridContacts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,23 @@
             this.GridContacts.Size = new System.Drawing.Size(786, 293);
             this.GridContacts.TabIndex = 0;
             this.GridContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridContacts_CellContentClick);
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Id";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // label1
             // 
@@ -94,30 +112,13 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(479, 60);
+            this.btnAdd.Location = new System.Drawing.Point(573, 31);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForLinkValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Id";
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -153,17 +154,28 @@
             // 
             this.contactBindingSource.DataSource = typeof(WinformsCRUD.Contact);
             // 
-            // Main
+            // btnBackMain
+            // 
+            this.btnBackMain.Location = new System.Drawing.Point(479, 60);
+            this.btnBackMain.Name = "btnBackMain";
+            this.btnBackMain.Size = new System.Drawing.Size(75, 26);
+            this.btnBackMain.TabIndex = 5;
+            this.btnBackMain.Text = "Back Main";
+            this.btnBackMain.UseVisualStyleBackColor = true;
+            this.btnBackMain.Click += new System.EventHandler(this.btnBackMain_Click);
+            // 
+            // MainContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBackMain);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GridContacts);
-            this.Name = "Main";
+            this.Name = "MainContacts";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Main_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.GridContacts)).EndInit();
@@ -188,6 +200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
+        private System.Windows.Forms.Button btnBackMain;
     }
 }
 

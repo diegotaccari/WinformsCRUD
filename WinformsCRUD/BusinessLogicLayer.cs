@@ -30,5 +30,25 @@ namespace WinformsCRUD
         {
             _dataAccessLayer.DeleteContact(id);
         }
+
+        public Productoc SaveProductoc (Productoc productoc)
+        {
+            if (productoc.Id == 0)
+                _dataAccessLayer.InsertProductoc(productoc);
+            else
+                _dataAccessLayer.UpdateProductoc(productoc);
+
+            return productoc;
+        }
+        public List<Productoc> GetProductocs( string searchText = null)
+        {
+           return _dataAccessLayer.GetProductoc(searchText);
+        }
+
+        public void DeleteProductoc(int id) 
+        {
+            _dataAccessLayer.DeleteProduct(id);
+        }
+
     }
 }

@@ -55,19 +55,47 @@
     </Compile>
     <Compile Include="Contact.cs" />
     <Compile Include="DataAccesLayer.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="MainContacts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="MainContacts.Designer.cs">
+      <DependentUpon>MainContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainProducts.Designer.cs">
+      <DependentUpon>MainProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productoc.cs" />
+    <Compile Include="ProdutcDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutcDetails.Designer.cs">
+      <DependentUpon>ProdutcDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ContacDetails.resx">
       <DependentUpon>ContacDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="MainContacts.resx">
+      <DependentUpon>MainContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainProducts.resx">
+      <DependentUpon>MainProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutcDetails.resx">
+      <DependentUpon>ProdutcDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +107,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\Contact.datasource" />
+    <None Include="Properties\DataSources\Productoc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
