@@ -41,5 +41,15 @@ namespace WinformsCRUD
             MainProducts mainProducts = new MainProducts();
             mainProducts.ShowDialog(this);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimized_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
