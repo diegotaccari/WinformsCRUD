@@ -33,16 +33,20 @@
             this.btnBackMenu = new System.Windows.Forms.Button();
             this.BtnAddProduct = new System.Windows.Forms.Button();
             this.gridProducts = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbSearchProduct = new System.Windows.Forms.TextBox();
+            this.btnPorcentaje = new System.Windows.Forms.Button();
+            this.txtIncremto = new System.Windows.Forms.TextBox();
+            this.btnPrecioCosto = new System.Windows.Forms.Button();
+            this.txtIncremtoPC = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.denominacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.productocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbSearchProduct = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productocBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +101,73 @@
             this.gridProducts.TabIndex = 3;
             this.gridProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProducts_CellContentClick);
             // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Id";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Id";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search Product";
+            // 
+            // txbSearchProduct
+            // 
+            this.txbSearchProduct.Location = new System.Drawing.Point(116, 39);
+            this.txbSearchProduct.Name = "txbSearchProduct";
+            this.txbSearchProduct.Size = new System.Drawing.Size(144, 20);
+            this.txbSearchProduct.TabIndex = 5;
+            // 
+            // btnPorcentaje
+            // 
+            this.btnPorcentaje.Location = new System.Drawing.Point(311, 2);
+            this.btnPorcentaje.Name = "btnPorcentaje";
+            this.btnPorcentaje.Size = new System.Drawing.Size(99, 26);
+            this.btnPorcentaje.TabIndex = 6;
+            this.btnPorcentaje.Text = "% Precio Venta";
+            this.btnPorcentaje.UseVisualStyleBackColor = true;
+            this.btnPorcentaje.Click += new System.EventHandler(this.btnPorcentaje_Click);
+            // 
+            // txtIncremto
+            // 
+            this.txtIncremto.Location = new System.Drawing.Point(416, 6);
+            this.txtIncremto.Name = "txtIncremto";
+            this.txtIncremto.Size = new System.Drawing.Size(154, 20);
+            this.txtIncremto.TabIndex = 7;
+            // 
+            // btnPrecioCosto
+            // 
+            this.btnPrecioCosto.Location = new System.Drawing.Point(20, 2);
+            this.btnPrecioCosto.Name = "btnPrecioCosto";
+            this.btnPrecioCosto.Size = new System.Drawing.Size(99, 24);
+            this.btnPrecioCosto.TabIndex = 8;
+            this.btnPrecioCosto.Text = "% Precio costo";
+            this.btnPrecioCosto.UseVisualStyleBackColor = true;
+            this.btnPrecioCosto.Click += new System.EventHandler(this.btnPrecioCosto_Click);
+            // 
+            // txtIncremtoPC
+            // 
+            this.txtIncremtoPC.Location = new System.Drawing.Point(125, 5);
+            this.txtIncremtoPC.Name = "txtIncremtoPC";
+            this.txtIncremtoPC.Size = new System.Drawing.Size(154, 20);
+            this.txtIncremtoPC.TabIndex = 9;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -127,48 +198,19 @@
             this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
             this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Id";
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForLinkValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Id";
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForLinkValue = true;
-            // 
             // productocBindingSource
             // 
             this.productocBindingSource.DataSource = typeof(WinformsCRUD.Productoc);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Search Product";
-            // 
-            // txbSearchProduct
-            // 
-            this.txbSearchProduct.Location = new System.Drawing.Point(116, 39);
-            this.txbSearchProduct.Name = "txbSearchProduct";
-            this.txbSearchProduct.Size = new System.Drawing.Size(144, 20);
-            this.txbSearchProduct.TabIndex = 5;
             // 
             // MainProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtIncremtoPC);
+            this.Controls.Add(this.btnPrecioCosto);
+            this.Controls.Add(this.txtIncremto);
+            this.Controls.Add(this.btnPorcentaje);
             this.Controls.Add(this.txbSearchProduct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridProducts);
@@ -201,5 +243,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
+        private System.Windows.Forms.Button btnPorcentaje;
+        private System.Windows.Forms.TextBox txtIncremto;
+        private System.Windows.Forms.Button btnPrecioCosto;
+        private System.Windows.Forms.TextBox txtIncremtoPC;
     }
 }

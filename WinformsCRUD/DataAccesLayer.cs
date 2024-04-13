@@ -200,7 +200,7 @@ namespace WinformsCRUD
                     command.Parameters.Add(new SqlParameter("@Search", $"%{search}%"));
                 }
                 command.CommandText = query;
-                command.Connection = data; 
+                command.Connection = data;
 
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -249,7 +249,7 @@ namespace WinformsCRUD
                 command.Parameters.Add(precioVenta);
                 command.Parameters.Add(precioCosto);
                 command.Parameters.Add(stock);
-                
+
                 command.ExecuteNonQuery();
 
             }
@@ -260,9 +260,9 @@ namespace WinformsCRUD
             }
             finally { data.Close(); }
         }
-        
 
-        public void DeleteProduct (int id)
+
+        public void DeleteProduct(int id)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace WinformsCRUD
                 SqlCommand command = new SqlCommand(query, data);
                 command.Parameters.Add(new SqlParameter("@Id", id));
 
-                command.ExecuteNonQuery ();
+                command.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -281,8 +281,61 @@ namespace WinformsCRUD
             finally { data.Close(); }
         }
 
+        public class ProductoDAL
+        {
+            private string cadenaConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=WinFormsContacts;Data Source=DESKTOP-AJ848G2";
 
+            public void ActualizarPrecios(decimal factorAumento)
+            {
+                string consultaActualizacion = "UPDATE Productocs SET PrecioVenta = PrecioVenta * @FactorAumento";
 
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    using (SqlCommand comando = new SqlCommand(consultaActualizacion, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@FactorAumento", factorAumento);
+
+                        try
+                        {
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception($"Error en DAL al actualizar precios: {ex.Message}");
+                        }
+                    }
+                }
+            }
+
+        }
+        public class ProductoDALPC
+        {
+            private string cadenaConexion = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=WinFormsContacts;Data Source=DESKTOP-AJ848G2";
+
+            public void ActualizarPreciosPrecioCosto(decimal factorAumento)
+            {
+                string consultaActualizacion = "UPDATE Productocs SET PrecioCosto = PrecioCosto * @FactorAumento";
+
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    using (SqlCommand comando = new SqlCommand(consultaActualizacion, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@FactorAumento", factorAumento);
+
+                        try
+                        {
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception($"Error en DAL al actualizar precios: {ex.Message}");
+                        }
+                    }
+                }
+            }
+
+        }
     }
-
 }

@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WinformsCRUD.BusinessLogicLayer;
 
 namespace WinformsCRUD
 {
     public partial class MainProducts : Form
     {
         private BusinessLogicLayer _businessLogicLayer;
+        private ProductoBLL productoBLL = new ProductoBLL();
+        private ProductoBLLPC productoBLLPC = new ProductoBLLPC();
         public MainProducts()
         {
             InitializeComponent();
@@ -75,6 +78,48 @@ namespace WinformsCRUD
         {
             PopularProducts(txbSearchProduct.Text);
             txbSearchProduct.Text = string.Empty;
+        }
+
+        private void btnPorcentaje_Click(object sender, EventArgs e)
+        {
+            decimal porcentaje;
+            if (!decimal.TryParse(txtIncremto.Text, out porcentaje))
+            {
+                MessageBox.Show("Por favor, ingresa un porcentaje válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                productoBLL.ActualizarPrecios(porcentaje);
+                MessageBox.Show("Los precios se han actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar precios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnPrecioCosto_Click(object sender, EventArgs e)
+        {
+            decimal porcentaje;
+            if (!decimal.TryParse(txtIncremtoPC.Text, out porcentaje))
+            {
+                MessageBox.Show("Por favor, ingresa un porcentaje válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                productoBLLPC.ActualizarPreciosCosto(porcentaje);
+                MessageBox.Show("Los precios se han actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar precios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

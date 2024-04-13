@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WinformsCRUD.BusinessLogicLayer;
+using static WinformsCRUD.DataAccesLayer;
 
 namespace WinformsCRUD
 {
@@ -48,6 +50,24 @@ namespace WinformsCRUD
         public void DeleteProductoc(int id) 
         {
             _dataAccessLayer.DeleteProduct(id);
+        }
+        public class ProductoBLL
+        {
+            public void ActualizarPrecios(decimal porcentaje)
+            {
+                decimal factorAumento = 1 + (porcentaje / 100);
+                ProductoDAL productoDAL = new ProductoDAL();
+                productoDAL.ActualizarPrecios(factorAumento);
+            }
+        }
+        public class ProductoBLLPC
+        {
+            public void ActualizarPreciosCosto(decimal porcentaje)
+            {
+                decimal factorAumento = 1 + (porcentaje / 100);
+                ProductoDALPC productoDALPrecioCosto = new ProductoDALPC();
+                productoDALPrecioCosto.ActualizarPreciosPrecioCosto(factorAumento);
+            }
         }
 
     }
