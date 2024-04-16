@@ -124,7 +124,25 @@ namespace WinformsCRUD
 
         private void btnAplicarDescuento_Click(object sender, EventArgs e)
         {
-         
+            string denominacion = txtBDescuentoP.Text; // Obtener el nombre del producto desde el TextBox correspondiente
+            int cantidadDescuento;
+            if (!int.TryParse(txtBCantidadAdescontar.Text, out cantidadDescuento))
+            {
+                MessageBox.Show("Por favor, ingresa una cantidad de descuento válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                _businessLogicLayer.AplicarDescuentoProducto(denominacion, cantidadDescuento);
+                MessageBox.Show("Descuento aplicado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PopularProducts(); // Actualizar la lista de productos después de aplicar el descuento
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al aplicar el descuento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

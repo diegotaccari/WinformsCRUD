@@ -70,5 +70,9 @@ namespace WinformsCRUD
             }
         }
 
+        public void AplicarDescuentoProducto(string denominacion, int cantidadDescuento)
+        {
+            _dataAccessLayer.AplicarDescuentoProducto(denominacion, cantidadDescuento);
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WinformsCRUD
 {
@@ -336,6 +337,32 @@ namespace WinformsCRUD
                 }
             }
 
+        }
+        public void AplicarDescuentoProducto(string denominacion, int cantidadDescuento)
+        {
+            try
+            {
+                data.Open();
+                string query = @"
+                UPDATE Productocs
+                SET Stock = Stock - @CantidadDescuento
+                WHERE Denominacion = @Denominacion"
+                ;
+
+                SqlCommand command = new SqlCommand(query, data);
+                command.Parameters.AddWithValue("@Denominacion", denominacion);
+                command.Parameters.AddWithValue("@CantidadDescuento", cantidadDescuento);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al aplicar el descuento del producto: {ex.Message}");
+            }
+            finally
+            {
+                data.Close();
+            }
         }
     }
 }
