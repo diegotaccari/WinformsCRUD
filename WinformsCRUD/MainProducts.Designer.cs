@@ -33,20 +33,24 @@
             this.btnBackMenu = new System.Windows.Forms.Button();
             this.BtnAddProduct = new System.Windows.Forms.Button();
             this.gridProducts = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.denominacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.productocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txbSearchProduct = new System.Windows.Forms.TextBox();
             this.btnPorcentaje = new System.Windows.Forms.Button();
             this.txtIncremto = new System.Windows.Forms.TextBox();
             this.btnPrecioCosto = new System.Windows.Forms.Button();
             this.txtIncremtoPC = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.denominacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblCantidadADescontar = new System.Windows.Forms.Label();
+            this.txtBCantidadAdescontar = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblNombreProducto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productocBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -95,11 +99,41 @@
             this.Edit,
             this.Delete});
             this.gridProducts.DataSource = this.productocBindingSource;
-            this.gridProducts.Location = new System.Drawing.Point(1, 69);
+            this.gridProducts.Location = new System.Drawing.Point(1, 107);
             this.gridProducts.Name = "gridProducts";
             this.gridProducts.Size = new System.Drawing.Size(738, 259);
             this.gridProducts.TabIndex = 3;
             this.gridProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProducts_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // denominacionDataGridViewTextBoxColumn
+            // 
+            this.denominacionDataGridViewTextBoxColumn.DataPropertyName = "Denominacion";
+            this.denominacionDataGridViewTextBoxColumn.HeaderText = "Denominacion";
+            this.denominacionDataGridViewTextBoxColumn.Name = "denominacionDataGridViewTextBoxColumn";
+            // 
+            // precioVentaDataGridViewTextBoxColumn
+            // 
+            this.precioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.Name = "precioVentaDataGridViewTextBoxColumn";
+            // 
+            // precioCostoDataGridViewTextBoxColumn
+            // 
+            this.precioCostoDataGridViewTextBoxColumn.DataPropertyName = "PrecioCosto";
+            this.precioCostoDataGridViewTextBoxColumn.HeaderText = "PrecioCosto";
+            this.precioCostoDataGridViewTextBoxColumn.Name = "precioCostoDataGridViewTextBoxColumn";
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             // 
             // Edit
             // 
@@ -117,6 +151,10 @@
             this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForLinkValue = true;
+            // 
+            // productocBindingSource
+            // 
+            this.productocBindingSource.DataSource = typeof(WinformsCRUD.Productoc);
             // 
             // label1
             // 
@@ -168,45 +206,47 @@
             this.txtIncremtoPC.Size = new System.Drawing.Size(154, 20);
             this.txtIncremtoPC.TabIndex = 9;
             // 
-            // idDataGridViewTextBoxColumn
+            // lblCantidadADescontar
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.lblCantidadADescontar.AutoSize = true;
+            this.lblCantidadADescontar.Location = new System.Drawing.Point(20, 65);
+            this.lblCantidadADescontar.Name = "lblCantidadADescontar";
+            this.lblCantidadADescontar.Size = new System.Drawing.Size(108, 13);
+            this.lblCantidadADescontar.TabIndex = 10;
+            this.lblCantidadADescontar.Text = "Cantidad a descontar";
             // 
-            // denominacionDataGridViewTextBoxColumn
+            // txtBCantidadAdescontar
             // 
-            this.denominacionDataGridViewTextBoxColumn.DataPropertyName = "Denominacion";
-            this.denominacionDataGridViewTextBoxColumn.HeaderText = "Denominacion";
-            this.denominacionDataGridViewTextBoxColumn.Name = "denominacionDataGridViewTextBoxColumn";
+            this.txtBCantidadAdescontar.Location = new System.Drawing.Point(134, 63);
+            this.txtBCantidadAdescontar.Name = "txtBCantidadAdescontar";
+            this.txtBCantidadAdescontar.Size = new System.Drawing.Size(114, 20);
+            this.txtBCantidadAdescontar.TabIndex = 11;
             // 
-            // precioVentaDataGridViewTextBoxColumn
+            // textBox1
             // 
-            this.precioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta";
-            this.precioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta";
-            this.precioVentaDataGridViewTextBoxColumn.Name = "precioVentaDataGridViewTextBoxColumn";
+            this.textBox1.Location = new System.Drawing.Point(393, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 20);
+            this.textBox1.TabIndex = 12;
             // 
-            // precioCostoDataGridViewTextBoxColumn
+            // lblNombreProducto
             // 
-            this.precioCostoDataGridViewTextBoxColumn.DataPropertyName = "PrecioCosto";
-            this.precioCostoDataGridViewTextBoxColumn.HeaderText = "PrecioCosto";
-            this.precioCostoDataGridViewTextBoxColumn.Name = "precioCostoDataGridViewTextBoxColumn";
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            // 
-            // productocBindingSource
-            // 
-            this.productocBindingSource.DataSource = typeof(WinformsCRUD.Productoc);
+            this.lblNombreProducto.AutoSize = true;
+            this.lblNombreProducto.Location = new System.Drawing.Point(286, 72);
+            this.lblNombreProducto.Name = "lblNombreProducto";
+            this.lblNombreProducto.Size = new System.Drawing.Size(90, 13);
+            this.lblNombreProducto.TabIndex = 13;
+            this.lblNombreProducto.Text = "Nombre Producto";
             // 
             // MainProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNombreProducto);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBCantidadAdescontar);
+            this.Controls.Add(this.lblCantidadADescontar);
             this.Controls.Add(this.txtIncremtoPC);
             this.Controls.Add(this.btnPrecioCosto);
             this.Controls.Add(this.txtIncremto);
@@ -247,5 +287,9 @@
         private System.Windows.Forms.TextBox txtIncremto;
         private System.Windows.Forms.Button btnPrecioCosto;
         private System.Windows.Forms.TextBox txtIncremtoPC;
+        private System.Windows.Forms.Label lblCantidadADescontar;
+        private System.Windows.Forms.TextBox txtBCantidadAdescontar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblNombreProducto;
     }
 }
