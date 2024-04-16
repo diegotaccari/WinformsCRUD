@@ -49,8 +49,9 @@
             this.txtIncremtoPC = new System.Windows.Forms.TextBox();
             this.lblCantidadADescontar = new System.Windows.Forms.Label();
             this.txtBCantidadAdescontar = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBDescuentoP = new System.Windows.Forms.TextBox();
             this.lblNombreProducto = new System.Windows.Forms.Label();
+            this.btnAplicarDescuento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productocBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -222,12 +223,12 @@
             this.txtBCantidadAdescontar.Size = new System.Drawing.Size(114, 20);
             this.txtBCantidadAdescontar.TabIndex = 11;
             // 
-            // textBox1
+            // txtBDescuentoP
             // 
-            this.textBox1.Location = new System.Drawing.Point(393, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtBDescuentoP.Location = new System.Drawing.Point(394, 69);
+            this.txtBDescuentoP.Name = "txtBDescuentoP";
+            this.txtBDescuentoP.Size = new System.Drawing.Size(82, 20);
+            this.txtBDescuentoP.TabIndex = 12;
             // 
             // lblNombreProducto
             // 
@@ -238,13 +239,24 @@
             this.lblNombreProducto.TabIndex = 13;
             this.lblNombreProducto.Text = "Nombre Producto";
             // 
+            // btnAplicarDescuento
+            // 
+            this.btnAplicarDescuento.Location = new System.Drawing.Point(499, 69);
+            this.btnAplicarDescuento.Name = "btnAplicarDescuento";
+            this.btnAplicarDescuento.Size = new System.Drawing.Size(95, 23);
+            this.btnAplicarDescuento.TabIndex = 14;
+            this.btnAplicarDescuento.Text = "Descuento ";
+            this.btnAplicarDescuento.UseVisualStyleBackColor = true;
+            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click);
+            // 
             // MainProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAplicarDescuento);
             this.Controls.Add(this.lblNombreProducto);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBDescuentoP);
             this.Controls.Add(this.txtBCantidadAdescontar);
             this.Controls.Add(this.lblCantidadADescontar);
             this.Controls.Add(this.txtIncremtoPC);
@@ -289,7 +301,8 @@
         private System.Windows.Forms.TextBox txtIncremtoPC;
         private System.Windows.Forms.Label lblCantidadADescontar;
         private System.Windows.Forms.TextBox txtBCantidadAdescontar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBDescuentoP;
         private System.Windows.Forms.Label lblNombreProducto;
+        private System.Windows.Forms.Button btnAplicarDescuento;
     }
 }

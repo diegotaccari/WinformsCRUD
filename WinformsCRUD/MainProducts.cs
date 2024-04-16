@@ -121,5 +121,10 @@ namespace WinformsCRUD
                 MessageBox.Show($"Error al actualizar precios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAplicarDescuento_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
