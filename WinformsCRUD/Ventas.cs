@@ -13,6 +13,8 @@ namespace WinformsCRUD
         public string ProductoVendido { get; set; }
         public int CantidadVendida { get; set; }
         public decimal PrecioUnitario { get; set; }
-        
+        public int ProductoId { get; set; }
+
+
     }
 }
