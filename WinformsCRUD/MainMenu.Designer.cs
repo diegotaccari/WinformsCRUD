@@ -33,6 +33,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pMainMenu = new System.Windows.Forms.Panel();
             this.btnMinimized = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
             this.pMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@
             // pMainMenu
             // 
             this.pMainMenu.BackColor = System.Drawing.Color.OrangeRed;
+            this.pMainMenu.Controls.Add(this.btnVenta);
             this.pMainMenu.Controls.Add(this.btnMinimized);
             this.pMainMenu.Controls.Add(this.btnClose);
             this.pMainMenu.Controls.Add(this.btnContacts);
@@ -101,6 +103,16 @@
             this.btnMinimized.UseVisualStyleBackColor = true;
             this.btnMinimized.Click += new System.EventHandler(this.btnMinimized_Click);
             // 
+            // btnVenta
+            // 
+            this.btnVenta.Location = new System.Drawing.Point(366, 28);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(118, 32);
+            this.btnVenta.TabIndex = 4;
+            this.btnVenta.Text = "Venta";
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pMainMenu;
         private System.Windows.Forms.Button btnMinimized;
+        private System.Windows.Forms.Button btnVenta;
     }
 }
