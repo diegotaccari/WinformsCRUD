@@ -10,9 +10,9 @@ namespace WinformsCRUD
     {
         public int Id { get; set; }
         public string Denominacion { get; set; }
-        public decimal  PrecioVenta { get; set; }
+        public double  PrecioVenta { get; set; }
         public decimal  PrecioCosto { get; set; }
-        public  int  Stock { get; set; }
+        public  double   Stock { get; set; }
 
     }
 }

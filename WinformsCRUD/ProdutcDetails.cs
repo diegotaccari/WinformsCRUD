@@ -39,7 +39,7 @@ namespace WinformsCRUD
         {
             Productoc productoc = new Productoc();
             productoc.Denominacion = txtDenominacion.Text;
-            productoc.PrecioVenta = decimal.Parse(txtBPrecioVenta.Text);
+            productoc.PrecioVenta = double.Parse(txtBPrecioVenta.Text);
             productoc.PrecioCosto = decimal.Parse(txtBPrecioCosto.Text);
             productoc.Stock = int.Parse(txtBStock.Text);
 

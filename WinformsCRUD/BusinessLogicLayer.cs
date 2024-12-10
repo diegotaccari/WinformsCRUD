@@ -74,5 +74,32 @@ namespace WinformsCRUD
         {
             _dataAccessLayer.AplicarDescuentoProducto(denominacion, cantidadDescuento);
         }
+        public class ProductoNegocio
+        {
+            private ProductoData productoData;
+
+            public ProductoNegocio()
+            {
+                // Inicializa la capa de datos en el constructor de la capa de negocio
+                productoData = new ProductoData();
+            }
+
+            // Método para obtener productos
+            public List<Productoc> ObtenerProductos()
+            {
+                try
+                {
+                    // Utiliza el método de la capa de datos para obtener los productos
+                    return productoData.ObtenerProductos();
+                }
+                catch (Exception ex)
+                {
+                    // Si ocurre un error, relanza la excepción o maneja según lo necesites
+                    throw new Exception("Error en ProductoNegocio.ObtenerProductos(): " + ex.Message);
+                }
+            }
+        }
+
+
     }
 }

@@ -57,7 +57,7 @@ namespace WinformsCRUD
                 {
                     Id =int.Parse(gridProducts.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Denominacion = gridProducts.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                    PrecioVenta = decimal.Parse(gridProducts.Rows[e.RowIndex].Cells[2].Value.ToString()),
+                    PrecioVenta = double.Parse(gridProducts.Rows[e.RowIndex].Cells[2].Value.ToString()),
                     PrecioCosto = decimal.Parse(gridProducts.Rows[e.RowIndex].Cells[3].Value.ToString()),
                     Stock = int.Parse(gridProducts.Rows[e.RowIndex].Cells[4].Value.ToString()),
                 });

@@ -16,5 +16,15 @@ namespace WinformsCRUD
         {
             InitializeComponent();
         }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cmbProductoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

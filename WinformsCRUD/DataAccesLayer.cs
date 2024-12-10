@@ -210,9 +210,9 @@ namespace WinformsCRUD
                     {
                         Id = int.Parse(reader["Id"].ToString()),
                         Denominacion = reader["Denominacion"].ToString(),
-                        PrecioVenta = decimal.Parse(reader["PrecioVenta"].ToString()),
+                        PrecioVenta = double.Parse(reader["PrecioVenta"].ToString()),
                         PrecioCosto = decimal.Parse(reader["PrecioCosto"].ToString()),
-                        Stock = int.Parse(reader["Stock"].ToString()),
+                        Stock = double.Parse(reader["Stock"].ToString()),
                     });
                 }
 
@@ -364,5 +364,51 @@ namespace WinformsCRUD
                 data.Close();
             }
         }
+
+        public class ProductoData
+        {
+            private SqlConnection data = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=WinFormsContacts;Data Source=DESKTOP-AJ848G2");
+
+            public List<Productoc> ObtenerProductos()
+            {
+                List<Productoc> productos = new List<Productoc>();
+
+                string query = "SELECT Id, Nombre FROM Productos";
+
+                using (SqlCommand command = new SqlCommand(query, data))
+                {
+                    try
+                    {
+                        data.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Productoc producto = new Productoc();
+                                producto.Id = Convert.ToInt32(reader["Id"]);
+                                producto.Denominacion = reader["Nombre"].ToString();
+                                productos.Add(producto);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Lanzar una excepción con el mensaje de error
+                        throw new Exception("Error al obtener los productos: " + ex.Message);
+                    }
+                    finally
+                    {
+                        data.Close();
+                    }
+                }
+
+                return productos;
+            }
+        }
+
+
     }
+
 }
+
+

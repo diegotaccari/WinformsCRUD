@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.lblDenominacionPro = new System.Windows.Forms.Label();
-            this.textBProducVenta = new System.Windows.Forms.TextBox();
             this.lblCantidadVenta = new System.Windows.Forms.Label();
             this.txtBCantidadVenta = new System.Windows.Forms.TextBox();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.txtBPrecioVenta = new System.Windows.Forms.TextBox();
             this.btnVenta = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbProductoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,13 +47,6 @@
             this.lblDenominacionPro.Size = new System.Drawing.Size(53, 13);
             this.lblDenominacionPro.TabIndex = 0;
             this.lblDenominacionPro.Text = " Producto";
-            // 
-            // textBProducVenta
-            // 
-            this.textBProducVenta.Location = new System.Drawing.Point(134, 35);
-            this.textBProducVenta.Name = "textBProducVenta";
-            this.textBProducVenta.Size = new System.Drawing.Size(125, 20);
-            this.textBProducVenta.TabIndex = 1;
             // 
             // lblCantidadVenta
             // 
@@ -95,6 +88,7 @@
             this.btnVenta.TabIndex = 6;
             this.btnVenta.Text = "Registar Venta";
             this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // dataGridView1
             // 
@@ -104,18 +98,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(736, 215);
             this.dataGridView1.TabIndex = 7;
             // 
+            // cmbProductoc
+            // 
+            this.cmbProductoc.FormattingEnabled = true;
+            this.cmbProductoc.Location = new System.Drawing.Point(129, 42);
+            this.cmbProductoc.Name = "cmbProductoc";
+            this.cmbProductoc.Size = new System.Drawing.Size(129, 21);
+            this.cmbProductoc.TabIndex = 8;
+            this.cmbProductoc.SelectedIndexChanged += new System.EventHandler(this.cmbProductoc_SelectedIndexChanged);
+            // 
             // MainVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbProductoc);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnVenta);
             this.Controls.Add(this.txtBPrecioVenta);
             this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.txtBCantidadVenta);
             this.Controls.Add(this.lblCantidadVenta);
-            this.Controls.Add(this.textBProducVenta);
             this.Controls.Add(this.lblDenominacionPro);
             this.Name = "MainVentas";
             this.Text = "MainVentas";
@@ -128,12 +131,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblDenominacionPro;
-        private System.Windows.Forms.TextBox textBProducVenta;
         private System.Windows.Forms.Label lblCantidadVenta;
         private System.Windows.Forms.TextBox txtBCantidadVenta;
         private System.Windows.Forms.Label lblPrecioVenta;
         private System.Windows.Forms.TextBox txtBPrecioVenta;
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbProductoc;
     }
 }
